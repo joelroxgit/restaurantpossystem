@@ -51,3 +51,8 @@ body{
 .footer-component{
     background-color: blanchedalmond;
 }
+
+.home-items{
+    display: flex;
+    flex-direction: row;
+}

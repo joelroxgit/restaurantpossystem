@@ -1,37 +1,25 @@
-import { useState } from 'react'
-import './App.css'
-import { BrowserRouter , Route, Routes} from "react-router-dom";
-import Header from './components/layoutComponents/Header'
-import Homepage from './components/layoutComponents/Homepage'
-import Sidebar from './components/layoutComponents/Sidebar'
-import Footer from './components/layoutComponents/Footer'
-import Bill from './pages/billItems';
-import Food from './pages/foodItems';
-import Customer from './pages/Customer';
-import Home from './pages/Home'
+
+import Header from './components/layoutComponents/Header';
+import Sidebar from './components/layoutComponents/Sidebar';
+import Footer from './components/layoutComponents/Footer';
+import Homepage from "./components/layoutComponents/Homepage";
+import LoginPage from './pages/LoginPage';
+import { Link } from "react-router-dom";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className='body-container'>
-       <BrowserRouter>
-     <Header/>
-     <Sidebar/>
-    
-          <Routes>
-              <Route path='/' xelement={Home}/>
-              <Route path='/food-items' Component={Food}/>
-              <Route path='/bills' Component={Bill}/>
-              <Route path='/customers' Component={Customer}/>
-          </Routes>
-    
-     <Homepage/>
-     <Footer/>
-     </BrowserRouter>
-     
-    </div>
-  )
+      <div className='body-container'>
+            <Header />
+            <Sidebar>
+            <ul>
+            <Link to="/login"><li>login</li></Link> 
+            </ul>
+            </Sidebar>
+            <Homepage/>
+            <Footer />
+      </div>
+  );
 }
 
-export default App
+export default App;
