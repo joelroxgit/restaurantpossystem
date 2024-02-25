@@ -9,8 +9,6 @@ function Sidebar() {
            <li style={{margin:"0px"}}> <Link to="/"> Home</Link></li> 
            <li><Link to="/foods">  Food Items</Link></li> 
            <li><Link to="/bills">  Bills</Link></li> 
-           <li><Link to="/customers">  Customers</Link></li> 
-           
            <li><Link to="/login">  Logout</Link></li> 
        </ul>
   </div>    
