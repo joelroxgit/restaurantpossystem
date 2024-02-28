@@ -21,7 +21,7 @@ function FoodItems() {
 
     const clickHandle = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/foodItems/', {
+            const response = await fetch('http://localhost:5002/api/foodItems/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

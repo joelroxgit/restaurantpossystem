@@ -5,7 +5,7 @@ function Homepage() {
     const token = localStorage.getItem('token');
     const getItems = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/foodItems', {
+            const response = await fetch('http://localhost:5002/api/foodItems', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -26,23 +26,16 @@ function Homepage() {
     <div className='home-items'>
          {foodItems.map(item => (
         <div >
-            <ol key={item.id}>
-               <li>{item.name}</li>
-               <li>{item.price}</li>
-               <li><img src={item.imageUrl} alt={item.name} /></li>
-               <li>{item.category}</li>
-               <li>{item.foodType}</li>
-               <button>Add</button>
-           </ol>
+        <div class="card" style="width: 18rem;">
+             <img src="https://st3.depositphotos.com/3051589/16452/i/1600/depositphotos_164525632-stock-photo-online-learning-connectivity-technology-coaching.jpg" class="card-img-top" alt="..."/>
+             <div class="card-body">
+               <h5 class="card-title"> <li>{item.name} + {item.category}</li></h5>
+               <p class="card-text">{item.price}</p>
+               <a href="#" class="btn btn-primary">Go somewhere</a>
+             </div>
+           </div>
         </div>
-    //        <div className='restro-cards'>  
-    //        <img className='res-card-logo'
-    //        src={CLOUDINARY+cloudinaryImageId}/>
-    //        <h3>{name}</h3>
-    //        <h4>{locality}</h4>
-    //        <h4>{avgRating}</h4>
-    //        <h4>{cuisines}</h4>
-    //    </div>
+         
            ))}
     </div>
 

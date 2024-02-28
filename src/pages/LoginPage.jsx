@@ -24,7 +24,7 @@ console.log(formData)
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users/login",
+        "http://localhost:5002/api/users/login",
         {
           
           userName: formData.userName,
@@ -33,7 +33,7 @@ console.log(formData)
         }
       );
       console.log(response)
-      console.log(localStorage.setItem('token',JSON.stringify(response.data)));
+      console.log(localStorage.setItem('token',JSON.stringify(response.data.token)));
     } catch (error) {
       console.log(error);
     }

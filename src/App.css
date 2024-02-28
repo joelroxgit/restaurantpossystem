@@ -56,3 +56,7 @@ body{
     display: flex;
     flex-direction: row;
 }
+.side-out{
+    display: flex;
+    height: 100vh;
+}
