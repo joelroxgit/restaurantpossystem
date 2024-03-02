@@ -5,12 +5,10 @@ function FoodItems() {
         name: '',
         price: '',
         imageUrl: '',
-        category: '',
         foodType: ''
     });
     const [foodItems, setFoodItems] = useState([]); // State to store fetched food items
     const token = localStorage.getItem('token');
-
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -38,7 +36,6 @@ function FoodItems() {
                 name: '',
                 price: '',
                 imageUrl: '',
-                category: '',
                 foodType: ''
             });
             // After submitting data, fetch items again to update the list
@@ -50,7 +47,8 @@ function FoodItems() {
 
     const getItems = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/foodItems/', {
+            console.log(token)
+            const response = await fetch('http://localhost:5002/api/foodItems/', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -77,7 +75,6 @@ function FoodItems() {
                 <input type='text' onChange={handleInputChange} name="name" value={formData.name} placeholder="Name" />
                 <input type='text' onChange={handleInputChange} name="price" value={formData.price} placeholder="Price" />
                 <input type='text' onChange={handleInputChange} name="imageUrl" value={formData.imageUrl} placeholder="Image URL" />
-                <input type='text' onChange={handleInputChange} name="category" value={formData.category} placeholder="Category" />
                 <input type='text' onChange={handleInputChange} name="foodType" value={formData.foodType} placeholder="Food Type" />
             </form>
             <button onClick={clickHandle}>Submit</button>
@@ -88,7 +85,6 @@ function FoodItems() {
                         <th>Name</th>
                         <th>Price</th>
                         <th>Image</th>
-                        <th>Category</th>
                         <th>FoodType</th>
                     </tr>
                 </thead>
@@ -97,8 +93,7 @@ function FoodItems() {
                         <tr key={item.id}>
                             <td>{item.name}</td>
                             <td>{item.price}</td>
-                            <td><img src={item.imageUrl} alt={item.name} /></td>
-                            <td>{item.category}</td>
+                            <td><img src={item.imageUrl} /></td>
                             <td>{item.foodType}</td>
                         </tr>
                     ))}

@@ -3,7 +3,6 @@ import axios from "axios";
 
 function LoginPage() {
   const [formData, setFormData] = useState({
-
     userName: "",
     password: ""
   })
@@ -29,11 +28,12 @@ console.log(formData)
           
           userName: formData.userName,
           password: formData.password,
+          role:"user",
         
         }
       );
       console.log(response)
-      console.log(localStorage.setItem('token',JSON.stringify(response.data.token)));
+      console.log(localStorage.setItem('token',response.data.token));
     } catch (error) {
       console.log(error);
     }

@@ -34,7 +34,6 @@ body{
     padding: 0%;
     grid-row: span 2;
     
-    background-color: gray;
 }
 
 .sidebar-Menu{
@@ -55,8 +54,4 @@ body{
 .home-items{
     display: flex;
     flex-direction: row;
-}
-.side-out{
-    display: flex;
-    height: 100vh;
 }

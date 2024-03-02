@@ -7,6 +7,8 @@ import Bill from "./pages/BillItems";
 import LoginPage from "./pages/LoginPage";
 import FoodItems from "./pages/FoodItems";
 import RegisterPage from "./pages/RegisterPage";
+import AdminLayout from "./components/layoutComponents/adminComponents/AdminLayout";
+import AdminDashboard from "./components/layoutComponents/adminComponents/Admin.Dashboard";
 
 const router = createBrowserRouter(
   createRoutesFromElements( 
@@ -17,7 +19,11 @@ const router = createBrowserRouter(
           <Route path="/bills" element={<Bill />} />
         </Route>
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />}/>
+
+        <Route path="/admin"  element={<AdminLayout/>}>
+            <Route path="/register"  index element={<RegisterPage />}/>
+            <Route path="/dashboard" element={<AdminDashboard />}/>
+        </Route>
     </>
     )
   )
@@ -29,4 +35,6 @@ const router = createBrowserRouter(
   }
 
   export default App;
+
+
 
