@@ -3,7 +3,7 @@ import { Outlet, Link } from "react-router-dom";
 
 function Sidebar() {
   return (
-    <div className="sidebar-component d-flex flex-column h-100h">
+    <div className="sidebar-component d-flex ">
       <ul className="list-group-sidebar">
         <li className="list-group-item">
           <Link to="/">Home</Link>

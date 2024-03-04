@@ -93,7 +93,7 @@ function FoodItems() {
                         <tr key={item.id}>
                             <td>{item.name}</td>
                             <td>{item.price}</td>
-                            <td><img src={item.imageUrl} /></td>
+                            <td><img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fnohat.cc%2Ff%2Finstagram-logos-in-vector-format-free-download-instagram-logo-small-size%2Fm2i8m2d3i8i8A0m2-201907231300.html&psig=AOvVaw2sXytuUaBmbxN1CDk0Rkuu&ust=1709615281266000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCODemq7r2YQDFQAAAAAdAAAAABAE' className='h-25 d-inline-block mw-100' /></td>
                             <td>{item.foodType}</td>
                         </tr>
                     ))}

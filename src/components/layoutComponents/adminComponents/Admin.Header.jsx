@@ -1,5 +1,5 @@
 
-function adminHeader (){
+function AdminHeader (){
     return(
         <div className="header-components">
             <img className='header-img' src='file:///home/elliot/Documents/project/restaurantpossystem/src/components/layoutComponents/pos.jpg'/>
@@ -7,4 +7,4 @@ function adminHeader (){
         
     )
 }
-export default adminHeader;
+export default AdminHeader;
