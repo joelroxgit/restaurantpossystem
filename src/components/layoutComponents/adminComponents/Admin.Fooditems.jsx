@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function FoodItems() {
+function AdminFooditems() {
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -11,8 +11,6 @@ function FoodItems() {
         foodType: ''
     });
     const [foodItems, setFoodItems] = useState([]); 
-    const [selectedFoodItem, setSelectedFoodItem] = useState(null);
-    const [modalIsOpen, setModalIsOpen] = useState(false);
     const [updatedFoodItemData, setUpdatedFoodItemData] = useState({
         name: '',
         price: '',
@@ -69,7 +67,7 @@ function FoodItems() {
                 throw new Error('Failed to fetch data');
             }
             const data = await response.json();
-            setFoodItems(data); 
+            setFoodItems(data);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -105,6 +103,7 @@ function FoodItems() {
             if (!response.ok) {
                 throw new Error("Failed to delete bill");
             }
+            
             window.location.reload();
         } catch (error) {
             console.error("Error deleting bill:", error);
@@ -164,4 +163,4 @@ function FoodItems() {
     );
 }
 
-export default FoodItems;
+export default AdminFooditems;

@@ -1,47 +1,37 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import Header from "./Header";
-import Footer from "./Footer";
 import Sidebar from "./Sidebar";
+import { useEffect } from "react";
 
 function RootLayout() {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login/user");
+    }
+  }, []); // Ensure empty dependency array for useEffect
+
   return (
-    <div>
-  <Header />
-  <div >
-    <div className="row">
-      <div className="col-lg-1">
-        <Sidebar />
-      </div>
-      <div className="col-lg-11">
-        <Outlet />
+    <div className="d-flex flex-column h-100">
+      <div className="row flex-grow-1 d-flex">
+        {/* Header in its own row for clarity and potential layout customization */}
+        <div className="col-lg-12">
+          <Header />
+        </div>
+
+        {/* Flex container for sidebar and output */}
+        <div className="row flex-grow-1 d-flex">
+          <div className="col-lg-2 border-end d-flex flex-column h-100">
+            <Sidebar />
+          </div>
+          <div className="col-lg-10">
+            <Outlet />
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-    // <div className="container-fluid d-flex flex-column h-100">
-    //   <div className="row flex-grow-1 d-flex align-items-center">
-    //     <div className="col-lg-12">
-    //       <Header />
-    //     </div>
-    //   </div>
-
-    //   <div className="row flex-grow-1 d-flex"> {/* Added d-flex */}
-    //     <div className="col-lg-1 border-end d-flex flex-column h-100"> {/* Added d-flex */}
-    //       <Sidebar />
-    //     </div>
-    //     <div className="col-lg-11">
-    //       <Outlet />
-    //     </div>
-    //   </div>
-
-    //   <div className="row justify-content-end fixed-bottom">
-    //     <div className="col-lg-12">
-    //       <Footer />
-    //     </div>
-    //   </div>
-    // </div>
   );
 }
 

@@ -15,7 +15,7 @@ function Sidebar() {
           <Link to="/bills">Bills</Link>
         </li>
         <li className="list-group-item">
-          <Link to="/login" onClick={() => localStorage.removeItem("token")}>
+          <Link to="/login/user" onClick={() => localStorage.removeItem("token")}>
             Logout
           </Link>
         </li>
